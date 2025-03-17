@@ -27,6 +27,20 @@ int main(){
     printf("Esquerda\n");
     r++;
    } while (r < 8);
+
+    // Movimento do cavalo usando "LOOP FOR e WHILE"
+    printf("\nMovimento do Cavalo:\n");
+
+    int c = 1;
+
+    while (c--)
+    {
+       for (int i = 0; i < 2; i++) {
+         printf("Baixo\n"); // Imprime "cima" 2x
+
+       }
+       printf("Esquerda\n"); // Imprime "direita" 2x
+   }
       
     return 0;
    
