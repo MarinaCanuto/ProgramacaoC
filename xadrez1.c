@@ -1,48 +1,56 @@
-#include <stdio.h>   
+#include <stdio.h>
 
-int main(){
-    // Movimento da torre usando "FOR"
-   printf("\nMovimento da Torre:\n");
-
-   for ( int t = 0; t< 5; t++)
-   {
+// Função recursiva para movimentação da Torre
+void moverTorre(int casas) {
+    if (casas == 0) return;
     printf("Direita\n");
-   }
-   
-   // Movimento do bispo usando "WHILE"
-   printf("\nMovimento do Bispo:\n");
-   int b = 0;
-
-   while (b < 5)
-   {
-    printf("Cima, Direita\n");
-    b++;
-   }
-   
-   // Movimento da Rainha usando "DO WHILE"
-   printf("\nMovimento da Rainha:\n");
-   int r = 0;
-
-   do {
-    printf("Esquerda\n");
-    r++;
-   } while (r < 8);
-
-    // Movimento do cavalo usando "LOOP FOR e WHILE"
-    printf("\nMovimento do Cavalo:\n");
-
-    int c = 1;
-
-    while (c--)
-    {
-       for (int i = 0; i < 2; i++) {
-         printf("Baixo\n"); // Imprime "cima" 2x
-
-       }
-       printf("Esquerda\n"); // Imprime "direita" 2x
-   }
-      
-    return 0;
-   
-
+    
+    moverTorre(casas - 1);
 }
+
+// Função recursiva para movimentação do Bispo
+void moverBispo(int casas, int mov1) {
+    if (mov1 >= casas) return;
+    printf("Cima, Direita\n");
+    moverBispo(casas, mov1 + 1);
+}
+
+// Função recursiva para movimentação da Rainha
+void moverRainha(int casas) {
+    if (casas == 0) return;
+    printf("Esquerda\n");
+    moverRainha(casas - 1);
+}
+
+// Função para movimentação do Cavalo usando loops aninhados 
+void moverCavalo(int movimentos) {
+    printf("\nMovimento do Cavalo:\n");
+    for (int i = 0; i < movimentos; i++) {
+        for (int j = 0; j < 2; j++) {
+            printf("Cima\n");
+        }
+        printf("Direita\n");
+    }
+}
+
+int main() {
+    // Movimentação da Torre
+    printf("\nMovimento da Torre:\n");
+    moverTorre(5);
+
+    // Movimentação do Bispo
+    printf("\nMovimento do Bispo:\n");
+    moverBispo(5, 0);
+
+    // Movimentação da Rainha
+    printf("\nMovimento da Rainha:\n");
+    moverRainha(8);
+
+    // Movimentação do Cavalo
+    moverCavalo(1);
+
+    return 0;
+}
+
+    
+         
