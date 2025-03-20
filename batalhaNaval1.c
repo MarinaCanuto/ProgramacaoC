@@ -29,9 +29,9 @@ int main() {
     // Exibe as colunas numeradas de 1 a 10
     printf("   ");  // Espaço antes das colunas para melhor alinhamento
     for (int j = 1; j <= tamanhoTabuleiro; j++) {
-        printf("%2d ", j);  // Exibe o número da coluna
+        printf("%2d ", j);  //  número da coluna
     }
-    printf("\n");  // Nova linha após exibir as colunas
+    printf("\n");  // 
     
     // Exibe o tabuleiro com as linhas numeradas de 1 a 10
     for (int i = 0; i < tamanhoTabuleiro; i++) {
@@ -39,7 +39,7 @@ int main() {
         for (int j = 0; j < tamanhoTabuleiro; j++) {
             printf("%2d ", tabuleiro[i][j]);  // Exibe o valor de cada célula
         }
-        printf("\n");  // Nova linha para a próxima linha do tabuleiro
+        printf("\n");  
     }
     
     return 0;
